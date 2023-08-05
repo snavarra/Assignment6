@@ -1,0 +1,64 @@
+	<div class="container">
+			<div class="row">
+				<main class="col-md-12">
+					<!-- Start your code here -->
+ <h2>Add Student</h2>
+<form method="POST" action="/students/add">
+    <!-- Student Information -->
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" class="form-control" name="firstName" id="firstName">
+    </div>
+    <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" class="form-control" name="lastName" id="lastName">
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" name="email" id="email">
+    </div>
+    <div class="form-group">
+        <label for="addressStreet">Street Address</label>
+        <input type="text" class="form-control" name="addressStreet" id="addressStreet">
+    </div>
+    <div class="form-group">
+        <label for="addressCity">City</label>
+        <input type="text" class="form-control" name="addressCity" id="addressCity">
+    </div>
+    <div class="form-group">
+        <label for="addressProvince">Province</label>
+        <input type="text" class="form-control" name="addressProvince" id="addressProvince">
+    </div>
+    <div class="form-check">
+        <input type="checkbox" class="form-check-input" name="TA" id="TA">
+        <label class="form-check-label" for="TA">Teaching Assistant</label>
+    </div>
+    <div class="form-group">
+        <label for="status">Status</label>
+        <select class="form-control" name="status" id="status">
+            <option value="Full Time">Full Time</option>
+            <option value="Part Time">Part time</option>
+        </select>
+    </div>
+
+    <!-- Course Information -->
+    <div class="form-group">
+        <label for="course">Course</label>
+        <select class="form-control" name="course" id="course">
+            <option value="">Select Course</option>
+            {{#each courses}}
+                <option value="{{courseId}}">{{courseCode}}</option>
+            {{/each}}
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Student</button>
+</form>
+
+					<!-- End your code here  -->
+
+
+
+				</main>
+			</div>
+		</div>

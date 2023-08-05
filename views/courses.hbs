@@ -1,0 +1,28 @@
+<div class="row">
+    <div class="col-md-12 table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Course Code</th>
+                    <th>Course Description</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#each courses}}
+                <tr>
+                    <td>{{courseCode}}</td>
+                    <td>{{courseDescription}}</td>
+                    <td>
+                        <a href="/courses/update/{{courseId}}" class="btn btn-primary">Edit</a>
+                        <form action="/courses/delete/{{courseId}}" method="post" style="display: inline;">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+<a href="/courses/add" class="btn btn-success float-right">Add New Course</a>
